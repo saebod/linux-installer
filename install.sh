@@ -44,6 +44,7 @@ chmod u+x nvim.appimage
 # Optional: exposing nvim globally.
 sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+rm -rf nvim.appimage
 #############
 msg "installing lazyvim"
 # required
@@ -54,3 +55,14 @@ rm -rf ~/.config/nvim/.git
 ############
 msg "installing Python"
 sudo apt install python3
+############
+msg "installing Oh-my-posh"
+sudo apt install unzip
+curl -s https://ohmyposh.dev/install.sh | bash -s
+if ! grep -q "oh-my-posh" ~/.bashrc; then
+    echo "eval \"\$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/capr4n.omp.json')\"" >> ~/.bashrc
+    echo "oh-my-posh line added to .bashrc"
+else
+    echo "oh-my-posh line already exists in .bashrc"
+fi
+
