@@ -1,5 +1,5 @@
 source ./utils/menu.sh
-OPTIONS_VALUES=("Update" "Python" "Docker" "Neovim" "Lazyvim" "Git" "oh-my-posh")
+OPTIONS_VALUES=("Update" "Python" "Docker" "Neovim" "Lazyvim" "Git" "oh-my-posh" "Git CLI")
 for i in "${!OPTIONS_VALUES[@]}"; do
 	OPTIONS_STRING+="${OPTIONS_VALUES[$i]};"
 done
@@ -42,6 +42,10 @@ for item in "${CHECKED[@]}"; do
         "oh-my-posh")
           msg "$item"
           ohmyposh_select
+          ;;
+        "Git CLI")
+          msg "$item"
+          gitcli_select
           ;;
         *)
             # You can add other cases here

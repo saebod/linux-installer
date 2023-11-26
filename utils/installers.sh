@@ -34,7 +34,7 @@ git_select() {
     sudo apt-get install git
 }
 
-git_cli_select() {
+gitcli_select() {
     sudo apt-get update
     sudo apt-get install -y curl
 
